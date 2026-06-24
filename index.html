@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cebraspe UnB 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-label="Protótipo Cebraspe UnB 2026">
+
+    <!-- ÍCONES SVG REUTILIZÁVEIS -->
+    <svg aria-hidden="true" class="svg-sprite">
+      <symbol id="i-bank" viewBox="0 0 24 24">
+        <path d="M3 10h18M5 10V20M9 10V20M15 10V20M19 10V20M3 20h18M12 3 3 8h18L12 3Z"/>
+      </symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M15 18H9M18 16V11a6 6 0 0 0-12 0v5l-2 2h16l-2-2ZM10 20h4"/>
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </symbol>
+      <symbol id="i-left" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <path d="M7 3v4M17 3v4M4 8h16M5 5h14v16H5zM8 12h3M13 12h3M8 16h3M13 16h3"/>
+      </symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24">
+        <path d="M7 3h7l5 5v13H7zM14 3v6h5M10 13h6M10 17h6"/>
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24">
+        <path d="M3 8 12 4l9 4-9 4-9-4ZM7 10v5c3 2 7 2 10 0v-5M20 9v6"/>
+      </symbol>
+      <symbol id="i-question" viewBox="0 0 24 24">
+        <path d="M9 9a3 3 0 1 1 5 2.2c-1 .7-2 1.3-2 2.8M12 18h.01M4 4h16v16H4z"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M4 19V5M4 19h16M7 16l4-5 3 3 5-7M17 7h3v3"/>
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12v10H6z"/>
+      </symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>
+      </symbol>
+      <symbol id="i-save" viewBox="0 0 24 24">
+        <path d="M5 3h12l2 2v16H5zM8 3v7h8V3M8 21v-6h8v6"/>
+      </symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24">
+        <path d="M12 16V5M8 9l4-4 4 4M5 18a4 4 0 0 1 0-8 6 6 0 0 1 11-2 5 5 0 0 1 3 10H5Z"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5"/>
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </symbol>
+      <symbol id="i-more" viewBox="0 0 24 24">
+        <circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>
+      </symbol>
+      <symbol id="i-help" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-.9.6-1.5 1.2-1.5 2.5M12 17h.01"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3v12M8 11l4 4 4-4M4 20h16"/>
+      </symbol>
+      <symbol id="i-barcode" viewBox="0 0 24 24">
+        <path d="M4 5v14M7 5v14M10 5v14M14 5v14M17 5v14M20 5v14"/>
+      </symbol>
+    </svg>
+
+    <!-- TELA 01 -->
+    <section id="home" class="screen is-active" data-step="data">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Notificações"><svg><use href="#i-bell"/></svg></button>
+      </header>
+
+      <section class="hero hero-simple">
+        <h1>Vestibular UnB 2026</h1>
+        <p>O seu futuro começa aqui.</p>
+        <button class="btn primary" data-target="course">Inscreva-se</button>
+        <button class="btn outline" data-target="course">Ver edital</button>
+      </section>
+
+      <button class="candidate-card" data-target="login">
+        <span class="soft-icon"><svg><use href="#i-user"/></svg></span>
+        <span>
+          <strong>Área do candidato</strong>
+          <small>Acesse suas inscrições e resultados</small>
+        </span>
+        <svg class="arrow"><use href="#i-arrow"/></svg>
+      </button>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <svg><use href="#i-calendar"/></svg>
+          <span>INÍCIO</span>
+          <strong>12 Jan</strong>
+        </article>
+        <article class="stat-card">
+          <svg><use href="#i-cap"/></svg>
+          <span>VAGAS</span>
+          <strong>2.140</strong>
+        </article>
+      </section>
+
+      <section class="list-section">
+        <div class="section-title">
+          <h2>Outros Concursos</h2>
+          <button>Ver todos</button>
+        </div>
+
+        <button class="contest-row">
+          <span class="thumb t1"></span>
+          <span><strong>TJ-DFT 2025</strong><small>Inscrições Abertas</small></span>
+          <svg><use href="#i-arrow"/></svg>
+        </button>
+
+        <button class="contest-row">
+          <span class="thumb t2"></span>
+          <span><strong>PF 2026 - Administrativo</strong><small>Edital em breve</small></span>
+          <svg><use href="#i-arrow"/></svg>
+        </button>
+
+        <button class="contest-row">
+          <span class="thumb t3"></span>
+          <span><strong>Câmara dos Deputados</strong><small>Resultados Finais</small></span>
+          <svg><use href="#i-arrow"/></svg>
+        </button>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-brand"><svg><use href="#i-bank"/></svg><strong>CEBRASPE</strong></div>
+        <div class="footer-links">
+          <a>Quem somos</a><a>Ouvidoria</a><a>Transparência</a><a>Contato</a><a>Privacidade</a><a>Dúvidas</a>
+        </div>
+        <p>© 2026 Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos.</p>
+      </footer>
+    </section>
+
+    <!-- TELA 02 -->
+    <section id="course" class="screen" data-step="course">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Notificações"><svg><use href="#i-bell"/></svg></button>
+      </header>
+
+      <section class="course-hero">
+        <span class="badge">INSCRIÇÕES ABERTAS</span>
+        <h1>Vestibular UnB 2026</h1>
+        <p>O seu futuro na Universidade de Brasília começa aqui. Prepare-se para o processo seletivo mais prestigiado do país.</p>
+        <button class="btn primary shadow" data-target="login">Inscreva-se <svg><use href="#i-arrow"/></svg></button>
+      </section>
+
+      <section>
+        <h2>Datas Importantes</h2>
+        <div class="date-box">
+          <article class="date-item">
+            <time><span>JUN</span><strong>15</strong></time>
+            <div><strong>Período de Inscrição</strong><small>Início às 10:00h via Cebraspe</small></div>
+          </article>
+          <article class="date-item">
+            <time class="muted"><span>JUL</span><strong>10</strong></time>
+            <div><strong>Pagamento da Taxa</strong><small>Último dia para compensação</small></div>
+          </article>
+          <article class="date-item">
+            <time class="muted border"><span>NOV</span><strong>24</strong></time>
+            <div><strong>Aplicação da Prova</strong><small>Primeiro dia (Humanas e Linguagens)</small></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="quick-grid">
+        <button class="quick-card active"><svg><use href="#i-calendar"/></svg><strong>Cronograma</strong></button>
+        <button class="quick-card"><svg><use href="#i-doc"/></svg><strong>Documentos</strong></button>
+        <button class="quick-card"><svg><use href="#i-question"/></svg><strong>Dúvidas</strong></button>
+        <button class="quick-card navy" data-target="review"><svg><use href="#i-chart"/></svg><strong>Acompanhar</strong></button>
+      </section>
+
+      <section class="campus-card">
+        <div>
+          <strong>Campus Darcy Ribeiro</strong>
+          <small>Asa Norte, Brasília - DF</small>
+        </div>
+      </section>
+
+      <p class="copyright">© 2025 Cebraspe / UnB</p>
+    </section>
+
+    <!-- TELA 03 -->
+    <section id="login" class="screen" data-step="data">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+      </header>
+
+      <section class="login-card">
+        <span class="big-icon"><svg><use href="#i-user"/></svg></span>
+        <h1>Área do Candidato</h1>
+        <p>Entre com seus dados para acessar o painel</p>
+
+        <label>CPF</label>
+        <div class="input-icon">
+          <svg><use href="#i-doc"/></svg>
+          <input value="000.000.000-00" aria-label="CPF">
+        </div>
+
+        <label>Senha</label>
+        <div class="input-icon">
+          <svg><use href="#i-lock"/></svg>
+          <input type="password" value="12345678" aria-label="Senha">
+          <svg><use href="#i-eye"/></svg>
+        </div>
+        <a class="forgot">Esqueci minha senha</a>
+
+        <button class="btn primary big" data-target="data">Entrar <svg><use href="#i-arrow"/></svg></button>
+
+        <hr>
+        <p>Ainda não tem conta?</p>
+        <button class="btn outline">Criar cadastro</button>
+      </section>
+
+      <div class="building-watermark"></div>
+    </section>
+
+    <!-- TELA 04 -->
+    <section id="data" class="screen" data-step="data">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Ajuda"><svg><use href="#i-help"/></svg></button>
+      </header>
+
+      <div class="progress-head">
+        <strong>Etapa 1 de 5</strong>
+        <strong>20% concluído</strong>
+      </div>
+      <div class="progress"><span style="width:20%"></span></div>
+
+      <section class="form-intro">
+        <h1>Dados Pessoais</h1>
+        <p>Inicie sua inscrição preenchendo as informações básicas de identificação.</p>
+      </section>
+
+      <form class="form-screen">
+        <label>Nome completo</label>
+        <input placeholder="Ex: Maria Oliveira Silva">
+        <label>CPF</label>
+        <input placeholder="000.000.000-00">
+        <label>Data de Nascimento</label>
+        <div class="input-action"><input placeholder="mm/dd/yyyy"><svg><use href="#i-calendar"/></svg></div>
+        <label>E-mail</label>
+        <input placeholder="seu@email.com">
+        <label>Telefone</label>
+        <input placeholder="(00) 00000-0000">
+        <button type="button" class="btn primary big" data-target="choose">Próximo <svg><use href="#i-arrow"/></svg></button>
+        <button type="button" class="btn outline"><svg><use href="#i-save"/></svg> Salvar rascunho</button>
+      </form>
+
+      <p class="privacy">Seus dados são processados de acordo com a Lei Geral de Proteção de Dados (LGPD). Utilizamos criptografia de ponta a ponta para garantir a segurança das suas informações.</p>
+    </section>
+
+    <!-- TELA 05 -->
+    <section id="choose" class="screen" data-step="course">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+      </header>
+
+      <div class="progress-head uppercase">
+        <strong>ETAPA 2 DE 5</strong>
+        <strong>40%</strong>
+      </div>
+      <div class="progress"><span style="width:40%"></span></div>
+
+      <section class="form-intro">
+        <h1>Escolha seu Curso</h1>
+        <p>Selecione as opções acadêmicas para sua jornada na UnB.</p>
+      </section>
+
+      <div class="notice">
+        <strong>i</strong>
+        <p>Certifique-se de que o turno e campus selecionados estão corretos. Alterações após a confirmação da etapa podem exigir novo processo.</p>
+      </div>
+
+      <form class="form-screen">
+        <label>CURSO DESEJADO</label>
+        <select><option>Selecione o curso</option><option>Ciência da Computação</option></select>
+
+        <label>CAMPUS</label>
+        <select><option>Selecione o campus</option><option>Campus Darcy Ribeiro</option></select>
+
+        <label>TURNO PREFERENCIAL</label>
+        <div class="choice-grid">
+          <button type="button" class="choice"><strong>Diurno</strong><small>Manhã/Tarde</small></button>
+          <button type="button" class="choice"><strong>Noturno</strong><small>Noite</small></button>
+        </div>
+
+        <label>MODALIDADE DE CONCORRÊNCIA</label>
+        <select><option>Selecione a modalidade</option></select>
+
+        <button type="button" class="btn primary big" data-target="docs">Próximo <svg><use href="#i-arrow"/></svg></button>
+        <button type="button" class="btn outline big" data-target="data"><svg><use href="#i-left"/></svg> Voltar</button>
+      </form>
+    </section>
+
+    <!-- TELA 06 -->
+    <section id="docs" class="screen" data-step="docs">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Perfil"><svg><use href="#i-user"/></svg></button>
+      </header>
+
+      <div class="progress-head">
+        <strong>Etapa 3 de 5</strong>
+        <strong>60%</strong>
+      </div>
+      <div class="progress"><span style="width:60%"></span></div>
+
+      <section class="form-intro">
+        <h1>Envio de Documentos</h1>
+        <p>Por favor, carregue os arquivos obrigatórios para prosseguir com sua inscrição.</p>
+      </section>
+
+      <section class="upload-box">
+        <span><svg><use href="#i-upload"/></svg></span>
+        <strong>Clique ou arraste arquivos aqui</strong>
+        <small>Suporta PDF, JPG e PNG<br>(Máx 5MB)</small>
+      </section>
+
+      <section class="file-list">
+        <article class="file-row success">
+          <svg><use href="#i-doc"/></svg>
+          <div><strong>Identidade</strong><small>Arquivo carregado</small></div>
+          <button aria-label="Excluir"><svg><use href="#i-trash"/></svg></button>
+        </article>
+
+        <article class="file-row error">
+          <svg><use href="#i-help"/></svg>
+          <div><strong>Histórico Escolar</strong><small>Formato inválido</small></div>
+          <button aria-label="Tentar novamente">↻</button>
+        </article>
+      </section>
+
+      <button class="btn primary big" data-target="review">Próximo <svg><use href="#i-arrow"/></svg></button>
+      <button class="btn outline big" data-target="choose">Voltar</button>
+    </section>
+
+    <!-- TELA 07 -->
+    <section id="review" class="screen" data-step="review">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Notificações"><svg><use href="#i-bell"/></svg></button>
+      </header>
+
+      <div class="progress-head review-progress">
+        <strong>Etapa 4 de 5</strong>
+        <strong>80%</strong>
+      </div>
+      <div class="progress dark"><span style="width:80%"></span></div>
+
+      <section class="form-intro">
+        <h1>Revisão da Inscrição</h1>
+        <p>Confira atentamente os dados abaixo antes de finalizar seu processo.</p>
+      </section>
+
+      <section class="review-card">
+        <div class="review-title"><strong><svg><use href="#i-user"/></svg> DADOS PESSOAIS</strong><a>Editar</a></div>
+        <h3>Mariana Silva</h3>
+        <p>CPF: 123.******-00<br>E-mail: mariana.silva@email.com</p>
+      </section>
+
+      <section class="review-card">
+        <div class="review-title"><strong><svg><use href="#i-cap"/></svg> CURSO E CAMPUS</strong><a>Editar</a></div>
+        <h3>Ciência da Computação</h3>
+        <p><span class="pill">Campus Darcy Ribeiro</span><span class="pill">Diurno</span></p>
+      </section>
+
+      <section class="review-card">
+        <div class="review-title"><strong><svg><use href="#i-doc"/></svg> DOCUMENTOS ENVIADOS</strong><a>Editar</a></div>
+        <p><span class="check-dot">✓</span> Identidade (RG) - Frente e Verso<br><span class="check-dot">✓</span> Histórico Escolar Ensino Médio</p>
+      </section>
+
+      <label class="terms">
+        <input type="checkbox">
+        <span>Declaro que li e aceito todos os <strong>termos e condições</strong> do edital de abertura do concurso Cebraspe UnB 2026.</span>
+      </label>
+
+      <button class="btn primary big" data-target="done">Confirmar inscrição <svg><use href="#i-arrow"/></svg></button>
+      <button class="btn outline big" data-target="docs"><svg><use href="#i-left"/></svg> Voltar</button>
+    </section>
+
+    <!-- TELA 08 -->
+    <section id="done" class="screen" data-step="done">
+      <header class="topbar">
+        <div class="brand">
+          <svg><use href="#i-bank"/></svg>
+          <strong>Cebraspe UnB 2026</strong>
+        </div>
+        <button class="icon-btn" aria-label="Mais opções"><svg><use href="#i-more"/></svg></button>
+      </header>
+
+      <div class="progress-head uppercase">
+        <strong>INSCRIÇÃO</strong>
+        <strong>100%</strong>
+      </div>
+      <div class="progress black"><span style="width:100%"></span></div>
+
+      <section class="success-hero">
+        <span><svg><use href="#i-check"/></svg></span>
+        <h1>Inscrição realizada com sucesso</h1>
+        <p>Sua participação no certame foi registrada. Verifique os dados abaixo para o pagamento.</p>
+      </section>
+
+      <section class="payment-card">
+        <div>
+          <small>NÚMERO DE INSCRIÇÃO</small>
+          <strong>2026-004812-7</strong>
+        </div>
+        <svg class="doc-bg"><use href="#i-doc"/></svg>
+        <div class="pay-grid">
+          <div><small>VALOR</small><strong>R$ 120,00</strong></div>
+          <div><small>VENCIMENTO</small><strong>15 OUT 2025</strong></div>
+        </div>
+        <hr>
+        <p>ⓘ A confirmação pode levar até 48h após o pagamento.</p>
+      </section>
+
+      <button class="btn primary big"><svg><use href="#i-barcode"/></svg> Gerar boleto (GRU)</button>
+      <div class="button-grid">
+        <button class="btn outline"><svg><use href="#i-download"/></svg> Baixar</button>
+        <button class="btn outline" data-target="review"><svg><use href="#i-chart"/></svg> Acompanhar</button>
+      </div>
+
+      <p class="secure"><span></span> Ambiente Seguro Governamental</p>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Navegação do fluxo">
+      <button data-target="data" data-nav="data"><svg><use href="#i-user"/></svg><span>Dados</span></button>
+      <button data-target="choose" data-nav="course"><svg><use href="#i-cap"/></svg><span>Curso</span></button>
+      <button data-target="docs" data-nav="docs"><svg><use href="#i-doc"/></svg><span>Docs</span></button>
+      <button data-target="review" data-nav="review"><svg><use href="#i-chart"/></svg><span>Revisão</span></button>
+      <button data-target="done" data-nav="done"><svg><use href="#i-check"/></svg><span>Fim</span></button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
